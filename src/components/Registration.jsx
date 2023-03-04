@@ -10,17 +10,17 @@ const initialValues = {
 };
 
 export const Registration = () => {
-  const { values, errors, touched, handleBlur, handleChange, handleSubmit } = useFormik({
-    initialValues: initialValues,
-    validationSchema: signUpSchema,
-    onSubmit: (values, action) => {
-      console.log("values", values);
-      console.log("errors", errors);
+  const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
+    useFormik({
+      initialValues: initialValues,
+      validationSchema: signUpSchema,
+      onSubmit: (values, action) => {
+        console.log("values", values);
+        console.log("errors", errors);
 
-      action.resetForm()
-
-    },
-  });
+        action.resetForm();
+      },
+    });
 
   return (
     <div>
@@ -40,7 +40,9 @@ export const Registration = () => {
             onChange={handleChange}
             onBlur={handleBlur}
           />
-          { errors.name && touched.name ? ( <p className="form-error">{errors.name}</p> ) : null}
+          {errors.name && touched.name ? (
+            <p className="form-error">{errors.name}</p>
+          ) : null}
         </div>
 
         <div className="input-block">
@@ -58,7 +60,9 @@ export const Registration = () => {
             onChange={handleChange}
             onBlur={handleBlur}
           />
-           { errors.email && touched.email ? ( <p className="form-error">{errors.email}</p> ) : null}
+          {errors.email && touched.email ? (
+            <p className="form-error">{errors.email}</p>
+          ) : null}
         </div>
 
         <div>
@@ -76,7 +80,9 @@ export const Registration = () => {
             onChange={handleChange}
             onBlur={handleBlur}
           />
-           { errors.password && touched.password ? ( <p className="form-error">{errors.password}</p> ) : null}
+          {errors.password && touched.password ? (
+            <p className="form-error">{errors.password}</p>
+          ) : null}
         </div>
 
         <div>
@@ -94,7 +100,9 @@ export const Registration = () => {
             onChange={handleChange}
             onBlur={handleBlur}
           />
-           { errors.confirm_password && touched.confirm_password ? ( <p className="form-error">{errors.confirm_password}</p> ) : null}
+          {errors.confirm_password && touched.confirm_password ? (
+            <p className="form-error">{errors.confirm_password}</p>
+          ) : null}
         </div>
 
         <div className="modal-buttons">
